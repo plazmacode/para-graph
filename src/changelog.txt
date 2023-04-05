@@ -1,0 +1,37 @@
+TODO:
+Add option to hide text input/ show background image or bar chart.
+ - Show hide icons for each page element
+ - Make icons into their own component
+Highlight top words in different colors like a heatmap
+
+Make a RAKE algorithm
+
+New Image query
+ - Takes multiple words if the most frequent words are close in amount
+ - Slideshow of most freqeuent words
+
+Updates:
+Make textarea element into p element with contentEditable
+Highlight most used word
+Highlight also scrolls correctly
+
+
+BUGS:
+---BUG 2 --- in Highlight.js: Highlighting also puts a <span> around any HTML tags
+DESC: 
+Only a problem if the user inputs rich text which contains HTML tags
+
+
+FIXED BUGS:
+
+---BUG 1 --- in PgInput.js: Empty words after change to contentEditable p element
+FIX: add word !== "" (phrase delimiter for empty words) in WordFrequency.js
+FIX: add trim() to .innerText
+FIX: add text.replace(/\n/g, ' ') in WordFrequency.js
+DESC:
+Still bugged from + characters
+Firefox creates a <br> tag when deleting in a contentEditable
+Cannot delete first letter in contentEditable similiar bug?: https://bugzilla.mozilla.org/show_bug.cgi?id=1394758
+single letter (or word) input gives barcount of 2?
+deleting that letter does not give an empty query, which should show API query of canvas for text input
+this might be because of the query dependency not calling useEffect as expected
