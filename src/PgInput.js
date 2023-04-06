@@ -2,7 +2,6 @@ import React, { useEffect, useState, useRef } from "react";
 import Background from "./Background";
 import BarChart from "./BarChart";
 import Highlight from "./Highlight";
-import IconBox from "./IconBox";
 import wordFrequency from "./WordFrequency";
 
 function PgInput() {
@@ -50,7 +49,11 @@ function PgInput() {
   }
   return (
     <>
-            <IconBox img={buttons.img} graph={buttons.graph} textBlock={buttons.textBlock} handleButtonClick={handleButtonClick} />
+      <div className="icon-box">
+        <i className={`bi bi-image button-icon ${buttons.img ? null : "button-off"}`} onClick={() => handleButtonClick('img')}></i>
+        <i className={`bi bi-bar-chart-fill button-icon ${buttons.graph ? null : "button-off"}`} onClick={() => handleButtonClick('graph')}></i>
+        <i className={`"bi bi-body-text button-icon ${buttons.textBlock ? null : "button-off"}`} onClick={() => handleButtonClick('textBlock')}></i>
+      </div>
       {buttons.img ? <Background query={query ? query : "canvas"}/> : null}
       {query && buttons.graph ? <BarChart words={words} barCount={20} /> : <BarChart words={words} barCount={0} />}
       <p className="most-frequent">{mostFrequent}</p>
