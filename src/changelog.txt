@@ -1,8 +1,9 @@
 TODO:
-Add option to hide text input/ show background image or bar chart.
- - Show hide icons for each page element
- - Make icons into their own component
+
 Highlight top words in different colors like a heatmap
+Gutendex API implementation
+ - Component to get book data
+ - Button to get book data
 
 Make a RAKE algorithm
 
@@ -11,9 +12,12 @@ New Image query
  - Slideshow of most freqeuent words
 
 Updates:
-Make textarea element into p element with contentEditable
-Highlight most used word
+Add option to hide text input/ show background image or bar chart.
+ - Show hide icons for each page element
+ - Make icons into their own component
 Highlight also scrolls correctly
+ - Highlight most used word
+Make textarea element into p element with contentEditable
 
 
 BUGS:
